@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assistente com Memoria</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="src/app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="memory-panel" aria-label="Memoria do assistente">
+        <header>
+          <p class="eyebrow">Assistente com memoria</p>
+          <h1>Contexto muda a conversa</h1>
+        </header>
+
+        <form id="memoryForm" class="memory-form">
+          <label>
+            Nome do aluno
+            <input id="studentName" type="text" placeholder="Ex.: Ana">
+          </label>
+          <label>
+            Interesses
+            <input id="interests" type="text" placeholder="Ex.: jogos, robos, musica">
+          </label>
+          <label>
+            Objetivo
+            <input id="goal" type="text" placeholder="Ex.: criar um bot para escola">
+          </label>
+          <label>
+            Tom preferido
+            <select id="tone">
+              <option value="explicativo">Explicativo</option>
+              <option value="direto">Direto</option>
+              <option value="criativo">Criativo</option>
+            </select>
+          </label>
+          <div class="button-row">
+            <button type="submit">Salvar memoria</button>
+            <button id="forgetButton" class="secondary" type="button">Esquecer</button>
+          </div>
+        </form>
+
+        <section class="facts" aria-label="Fatos lembrados">
+          <h2>Memoria atual</h2>
+          <dl id="factsList"></dl>
+        </section>
+      </section>
+
+      <section class="chat-panel" aria-label="Conversa com o assistente">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Historico</p>
+            <h2>Assistente de estudo</h2>
+          </div>
+          <button id="clearChatButton" type="button">Limpar conversa</button>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+
+        <form id="chatForm" class="composer">
+          <label class="sr-only" for="messageInput">Mensagem</label>
+          <input id="messageInput" type="text" autocomplete="off" placeholder="Pergunte algo sobre seu projeto">
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
